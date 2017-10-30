@@ -1,6 +1,6 @@
-package com.example.vika.searchmovieactor.Contract;
+package com.example.vika.searchmovieactor.contract;
 
-import com.example.vika.searchmovieactor.Model.Movie;
+import com.example.vika.searchmovieactor.model.Movie;
 
 import java.util.List;
 
