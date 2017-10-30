@@ -10,16 +10,19 @@ import android.widget.Toast;
 import com.example.vika.searchmovieactor.contract.Contract;
 import com.example.vika.searchmovieactor.model.Movie;
 import com.example.vika.searchmovieactor.R;
+import com.example.vika.searchmovieactor.presenter.MainActivityPresenter;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements Contract.View {
     private EditText input_et;
     private Button search_btn;
+    private Contract.Presenter mPresenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mPresenter = new MainActivityPresenter(this);
     }
 
     @Override
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         search_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mPresenter.onClick(view);
             }
         });
 
