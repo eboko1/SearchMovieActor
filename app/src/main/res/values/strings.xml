@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SearchMovieActor</string>
+    <string name="btn_search">SEARCH</string>
+</resources>
