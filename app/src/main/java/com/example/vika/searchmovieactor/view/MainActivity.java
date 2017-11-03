@@ -15,6 +15,7 @@ import com.example.vika.searchmovieactor.model.Movie;
 import com.example.vika.searchmovieactor.R;
 import com.example.vika.searchmovieactor.presenter.MainActivityPresenter;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements Contract.View {
@@ -32,9 +33,10 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
 
         recyclerView = (RecyclerView)findViewById(R.id.recycleView);
 
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-
+        
         if(mPresenter == null) {
             mPresenter = new MainActivityPresenter(this);
         }
@@ -74,4 +76,5 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         movieAdapter = new MovieAdapter(getApplicationContext(), movies,R.layout.item_movie);
         recyclerView.setAdapter(movieAdapter);
     }
+
 }

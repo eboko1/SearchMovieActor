@@ -45,21 +45,19 @@ public class MainActivityPresenter implements Contract.Presenter {
             mView.inputErrorMessage();
         } else {
             Call<MovieResult> call = RestClient.getMovieApiClient().getTopRatedMovies(Constants.HTTP.API_KEY, queryMovie);
-            Log.d(LOG, "call " + call);
-            call.enqueue(new Callback<MovieResult>() {
-                @Override
-                public void onResponse(Call<MovieResult> call, Response<MovieResult> response) {
-                    Log.d(LOG, "onResponse " + response.isSuccessful());
-                    List<Movie> listMovie = response.body().getResults();
-                    mView.setViewData(listMovie);
-                }
+                call.enqueue(new Callback<MovieResult>() {
+                    @Override
+                    public void onResponse(Call<MovieResult> call, Response<MovieResult> response) {
+                        Log.d(LOG, "onResponse " + response.isSuccessful());
+                        List<Movie> listMovie = response.body().getResults();
+                        mView.setViewData(listMovie);
+                    }
 
-                @Override
-                public void onFailure(Call<MovieResult> call, Throwable t) {
-                    Log.d(LOG, "onFailure " + t.getMessage());
-                }
-            });
-
+                    @Override
+                    public void onFailure(Call<MovieResult> call, Throwable t) {
+                        Log.d(LOG, "onFailure " + t.getMessage());
+                    }
+                });
         }
     }
 

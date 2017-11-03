@@ -6,23 +6,26 @@
         android:orientation="vertical"
         tools:context="com.example.vika.searchmovieactor.view.MainActivity">
 
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/linearLayout">
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycleView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="5" />
-        </android.support.v4.widget.SwipeRefreshLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/linearLayout" />
+
+    </ScrollView>
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1" >
+
             <EditText
                 android:id="@+id/inputEditText"
                 android:layout_weight="5"
@@ -33,7 +36,6 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_search"/>
-
         </LinearLayout>
 
     </RelativeLayout>
