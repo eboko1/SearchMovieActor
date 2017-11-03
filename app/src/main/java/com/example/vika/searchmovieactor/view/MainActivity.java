@@ -1,5 +1,6 @@
 package com.example.vika.searchmovieactor.view;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,7 +21,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements Contract.View {
     private EditText input_et;
-    private Button search_btn;
+    private FloatingActionButton search_btn;
     private Contract.Presenter mPresenter;
     private RecyclerView recyclerView;
     private MovieAdapter movieAdapter;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
     @Override
     public void initView() {
         input_et = (EditText)findViewById(R.id.inputEditText);
-        search_btn = (Button)findViewById(R.id.searchButton);
+        search_btn = (FloatingActionButton) findViewById(R.id.searchButton);
         search_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

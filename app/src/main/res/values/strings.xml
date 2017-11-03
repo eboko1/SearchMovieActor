@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">SearchMovieActor</string>
-    <string name="btn_search">SEARCH</string>
+    <string name="btn_search">GO</string>
     <string name="error_message">Error!Try again</string>
 </resources>
