@@ -40,6 +40,7 @@ public class MainActivityPresenter implements Contract.Presenter {
 
 
     private void loadMovieData() {
+
         String queryMovie = mView.setInputString();
         if(queryMovie.isEmpty() || queryMovie == null){
             mView.inputErrorMessage();
@@ -59,11 +60,13 @@ public class MainActivityPresenter implements Contract.Presenter {
                     }
                 });
         }
+        mView.hideProgressBar();
     }
 
 
     @Override
     public void onClick(View view) {
+        mView.showProgressBar();
         loadMovieData();
     }
 }

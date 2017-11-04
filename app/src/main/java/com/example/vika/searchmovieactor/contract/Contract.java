@@ -12,7 +12,8 @@ public interface Contract {
     interface View{
         void inputErrorMessage();
         String setInputString();
-        void showProgress();
+        void showProgressBar();
+        void hideProgressBar();
         void initView();
         void setViewData(List<Movie> movies);
     }

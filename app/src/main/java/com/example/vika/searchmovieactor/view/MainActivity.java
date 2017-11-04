@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.vika.searchmovieactor.adapter.MovieAdapter;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
     private Contract.Presenter mPresenter;
     private RecyclerView recyclerView;
     private MovieAdapter movieAdapter;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,13 +56,21 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
     }
 
     @Override
-    public void showProgress() {
+    public void showProgressBar() {
+     // setProgressBarIndeterminateVisibility(true);
+    progressBar.setVisibility(View.VISIBLE);
+    }
 
+    @Override
+    public void hideProgressBar() {
+       // setProgressBarIndeterminateVisibility(false);
+        progressBar.setVisibility(View.INVISIBLE);
     }
 
     @Override
     public void initView() {
         input_et = (EditText)findViewById(R.id.inputEditText);
+        progressBar=(ProgressBar)findViewById(R.id.progressBar);
         search_btn = (FloatingActionButton) findViewById(R.id.searchButton);
         search_btn.setOnClickListener(new View.OnClickListener() {
             @Override
